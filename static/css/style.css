@@ -12,7 +12,7 @@
 html {
   font-size: 62.5%;
   line-height: 1;
-  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, Segoe UI, Hiragino Sans, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, sans-serif;
+  font-family: "Zen Maru Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 body {
   position: relative;
@@ -36,11 +36,11 @@ body {
   width: 100%;
   height: 46vw;
   margin: 0 0 64px;
-  background-image: url(../images/header.png);
+  background-image: url("../images/header.png");
   background-position: left top;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
   background-color: #fff;
 }
 .header__content {
@@ -49,7 +49,7 @@ body {
   margin: 0 16px 16px 0;
   color: #fff;
   font-size: 4.2vw;
-  font-family: "Lato";
+  font-family: "Noto Serif JP", serif;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgb(0 0 0 / 60%);
   animation: fadeup 1.8s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -91,6 +91,7 @@ body {
     padding: 0;
     border: solid 4px #fff;
     border-radius: 8px;
+    font-weight: bold;
 }
 .section-in-title__head {
   position: absolute;
@@ -114,7 +115,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 0 40px;
+  margin: 0 0 32px;
 }
 .card {
   position: relative;
@@ -140,11 +141,12 @@ body {
   transform: scale(1, 1);
 }
 .card__head {
-  margin: 0 0 24px;
-  font-size: 2.8rem;
-  border-bottom: 1px dotted;
-  padding: 0 0 10px;
   display: inline-block;
+  margin: 0 0 24px;
+  padding: 0 0 10px;
+  border-bottom: 1px dotted;
+  font-size: 2.8rem;
+  font-weight: bold;
 }
 .card__body {
   line-height: 1.3;
@@ -153,20 +155,6 @@ body {
 
 /* list
 --------------------*/
-
-.list-horizon {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.list-horizon__item:before {
-  content: "|";
-  margin: 0 12px 0 0;
-}
-.list-horizon__item:first-child:before {
-  content: "";
-  margin: 0;
-}
 
 .list-vertical {
   line-height: 1.6;
@@ -199,6 +187,7 @@ body {
   padding: 1px 8px;
   border-radius: 8px;
   background: #E89E2E;
+  font-weight: bold;
 }
 
 
@@ -223,9 +212,10 @@ body {
 } 
 
 .text-price {
+  margin: 0 0 6px;
   color: #E89E2E;
   font-size: 3.2rem;
-  margin: 0 0 6px;
+  font-weight: bold;
 }
 
 .text-caution {

@@ -11,6 +11,7 @@
 
 .header {
   margin: 0 0 40px;
+  background-size: contain;
 }
 
 .main {
