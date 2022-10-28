@@ -8,6 +8,7 @@
 
 /* base
 --------------------*/
+
 html {
   font-size: 62.5%;
   line-height: 1;
@@ -17,7 +18,6 @@ body {
   position: relative;
   margin: auto;
   min-width: 320px;
-  max-width: 1600px;
   height: 100%;
   font-size: 1.6rem;
   word-break: break-all;
@@ -28,19 +28,49 @@ body {
 
 /* layout
 --------------------*/
+
 .header {
-  padding: 216px 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 46vw;
+  margin: 0 0 64px;
+  background-image: url(../images/header.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-color: #fff;
 }
+.header__content {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 16px 16px 0;
+  color: #fff;
+  font-size: 4.2vw;
+  font-family: "Lato";
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgb(0 0 0 / 60%);
+  animation: fadeup 1.8s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+.header__content > em {
+  font-size: 6.4vw;
+}
+
 .main {
   padding: 0 80px 80px;
+  max-width: 1600px;
+  margin: auto;
 }
 
 
 /* block
 --------------------*/
+
 .section,
 .section--m {
-  margin: 0 0 56px;
+  margin: 0 0 72px;
 }
 .section__head {
   margin: 0 0 24px;
@@ -51,19 +81,18 @@ body {
 .section__body {
   width: 100%;
 }
-
 .section--m .section__body {
   max-width: 520px;
 }
 
-.box-in-title {
+.section-in-title {
     position: relative;
     margin: 0 0 40px;
     padding: 0;
     border: solid 4px #fff;
     border-radius: 8px;
 }
-.box-in-title__head {
+.section-in-title__head {
   position: absolute;
   display: inline-block;
   top: -12px;
@@ -73,54 +102,14 @@ body {
   color: #fff;
   font-size: 2rem;
 }
-.box-in-title__body {
+.section-in-title__body {
   padding: 24px;
-}
-
-
-/* list
---------------------*/
-.list-horizon {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.list-horizon__item:before {
-  content: "|";
-  margin: 0 12px 0 0;
-}
-.list-horizon__item:first-child:before {
-  content: "";
-  margin: 0;
-}
-
-.list-vertical {
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-.list-vertical__item:before {
-  content: "●";
-  margin: 0 6px 0 0;
-}
-
-.list-number {
-  counter-reset: number;
-}
-.list-number__item {
-  line-height: 2;
-}
-.list-number__item:before {
-  counter-increment: number;
-  content: counter(number);
-  margin: 0 8px 0 0;
-  padding: 1px 8px;
-  border-radius: 50%;
-  background: #E89E2E;
 }
 
 
 /* card
 --------------------*/
+
 .card-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -141,7 +130,7 @@ body {
   bottom: 0;
   left: 0;
   z-index: -1;
-  content: '';
+  content: "";
   background: #333;
   transform-origin: center center;
   transform: scale(0, 1);
@@ -152,28 +141,64 @@ body {
 }
 .card__head {
   margin: 0 0 24px;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
+  border-bottom: 1px dotted;
+  padding: 0 0 10px;
+  display: inline-block;
 }
 .card__body {
   line-height: 1.3;
 }
 
 
-/* title
+/* list
 --------------------*/
-.title-h1 {
-  font-family: "Lato";
+
+.list-horizon {
   display: flex;
-  justify-content: center;
-  font-size: clamp(4.5rem, 14vw, 22rem);
-  font-weight: bold;
-  animation: fadeup 1.8s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  flex-wrap: wrap;
+  gap: 12px;
 }
-.title-h1__left {
-  color: #E89E2E;
+.list-horizon__item:before {
+  content: "|";
+  margin: 0 12px 0 0;
 }
-.title-h1__right {
-  color: #fff;
+.list-horizon__item:first-child:before {
+  content: "";
+  margin: 0;
+}
+
+.list-vertical {
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+.list-vertical__item {
+  display: flex;
+  align-items: baseline;  
+}
+.list-vertical__item:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px 0 0;
+  border-radius: 2px;
+  background: #E89E2E;
+}
+
+.list-number {
+  counter-reset: number;
+}
+.list-number__item {
+  line-height: 2;
+}
+.list-number__item:before {
+  counter-increment: number;
+  content: "STEP " counters(number, ".", decimal);
+  margin: 0 8px 0 0;
+  padding: 1px 8px;
+  border-radius: 8px;
+  background: #E89E2E;
 }
 
 
@@ -185,7 +210,7 @@ body {
   position: relative;
   font-size: 2rem;
 }
-.text-through:after {
+.text-through:before {
   position: absolute;
   content: "";
   display: block;
@@ -199,7 +224,7 @@ body {
 
 .text-price {
   color: #E89E2E;
-  font-size: 3.4rem;
+  font-size: 3.2rem;
   margin: 0 0 6px;
 }
 
@@ -219,6 +244,7 @@ body {
 
 /* animation
 --------------------*/
+
 @keyframes fadeup {
   0% {
     transform: translateY(30px);
