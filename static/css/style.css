@@ -86,12 +86,11 @@ body {
 }
 
 .section-in-title {
-    position: relative;
-    margin: 0 0 40px;
-    padding: 0;
-    border: solid 4px #fff;
-    border-radius: 8px;
-    font-weight: bold;
+  position: relative;
+  margin: 0 0 40px;
+  padding: 0;
+  border: solid 4px #fff;
+  border-radius: 8px;
 }
 .section-in-title__head {
   position: absolute;
@@ -102,6 +101,7 @@ body {
   background: #161616;
   color: #fff;
   font-size: 2rem;
+  font-weight: bold;
 }
 .section-in-title__body {
   padding: 24px;
@@ -169,6 +169,8 @@ body {
   display: inline-block;
   width: 12px;
   height: 12px;
+  min-width: 12px;
+  min-height: 12px;
   margin: 0 8px 0 0;
   border-radius: 2px;
   background: #E89E2E;
